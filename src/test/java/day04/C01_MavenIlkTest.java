@@ -30,13 +30,19 @@ public class C01_MavenIlkTest {
         aramaKutusu.sendKeys("Samsung headphones", Keys.ENTER);
 
         //       4- Bulunan sonuc sayisini yazdiralim
-        WebElement sonucYazisi = driver.findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
-        System.out.println(sonucYazisi.getText());
+    //    WebElement sonucYazisi = driver.findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+    //    System.out.println(sonucYazisi.getText());
+        String[] sonucYazisi = driver
+                .findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]")).getText().split(" ");
+        System.out.println("Samsung headphones icin arama sonucu: "+sonucYazisi[2]);
 
         //       5- Ilk urunu tiklayalim
-
+        driver.findElement(By.xpath("(//*[@class='s-image'])[1]")).click();
 
         //       6- Sayfadaki tum basliklari yazdiralim
+        System.out.println(driver.findElement(By.xpath("//h1")).getText());
+
+
 
     }
 
