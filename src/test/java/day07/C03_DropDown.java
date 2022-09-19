@@ -14,10 +14,9 @@ import java.time.Duration;
 import java.util.List;
 public class C03_DropDown {
     /*
-           ●https://www.amazon.com/ adresinegidin.
+           ●https://www.amazon.com/ adresine gidin.
            -Test1
-           Arama kutusunun yanindaki kategori menusundeki kategori sayisinin45
-           oldugunu testedin
+           Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu testedin
            -Test2
            1.Kategori menusunden Books seceneginisecin
            2.Arama kutusuna Java yazin vearatin
@@ -36,12 +35,11 @@ public class C03_DropDown {
     }
     @After
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
     @Test
     public void test1() {
-        //Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45
-        //oldugunu test edin
+        //Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu test edin
         WebElement ddm = driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
         select = new Select(ddm);
         /*
@@ -70,12 +68,15 @@ public class C03_DropDown {
         methodunu kullanırız
          */
         System.out.println(select.getFirstSelectedOption().getText());
+
 //           2.Arama kutusuna Java yazin ve aratin
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java", Keys.ENTER);
+
 //           3.Bulunan sonuc sayisiniyazdirin
         WebElement sonucYazisi = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
         System.out.println(sonucYazisi.getText());
-//           4.Sonucun Java kelimesini icerdigini testedin
+
+//           4.Sonucun Java kelimesini icerdigini test edin.
         String expectedKelime = "Java";
         String actualSonucYazisi = sonucYazisi.getText();
         Assert.assertTrue(actualSonucYazisi.contains(expectedKelime));

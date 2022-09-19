@@ -34,17 +34,18 @@ public class C02_DropDownHandle {
     }
     @After
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
     @Test
     public void test1(){
-        //Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45
-        //oldugunu test edin
+        //Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu test edin
         List<WebElement> drops = driver.findElements(By.xpath("//option"));
         System.out.println(drops.size());
+
         for (WebElement w:drops) {
             System.out.println(w.getText());
         }
+
         int dropDownList = drops.size();
         int expectedSayi = 45;
         Assert.assertNotEquals(expectedSayi,dropDownList);
