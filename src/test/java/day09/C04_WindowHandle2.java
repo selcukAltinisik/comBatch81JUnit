@@ -73,7 +73,7 @@ public class C04_WindowHandle2 {
         //    Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
 
 
-        //    Sayfadaki textin “New Window” olduğunu doğrulayın...
+        //    Sayfadaki textin “New Window” olduğunu doğrulayın....
 
 
         //    Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu  doğrulayın.
