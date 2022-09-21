@@ -23,6 +23,7 @@ public class C02_Allerts {
     - Alert içindeki mesajı almak için driver.switchTo().alert().getText() kullanılır
     - Alert bizden bir metin istiyorsa driver.switchTo().alert().sendKeys("") kullanılır
      */
+
     /*
     Bir class olusturun: Alerts
 https://the-internet.herokuapp.com/javascript_alerts adresine gidin.
@@ -60,6 +61,7 @@ tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
 
         Thread.sleep(2000);
         driver.switchTo().alert().accept();
+
         WebElement mesaj = driver.findElement(By.xpath("//*[@id='result']"));
         String actualMesaj = mesaj.getText();
         String expectedMesaj = "You successfully clicked an alert";
@@ -71,9 +73,11 @@ tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         //“successfuly” icermedigini test edin.
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         driver.findElement(By.xpath("//*[text()='Click for JS Confirm']")).click();
+
         //Alert üzerindeki mesajı yazdırın
         System.out.println("2.Buttonun Alert Mesajı = "+driver.switchTo().alert().getText());
         Thread.sleep(2000);
+
         driver.switchTo().alert().dismiss();
         String actualMesaj = driver.findElement(By.xpath("//*[@id='result']")).getText();
         String expectedMesaj = "successfuly";
@@ -85,13 +89,16 @@ tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         //tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         driver.findElement(By.xpath("//*[text()='Click for JS Prompt']")).click();
+
         //Alert üzerindeki mesajı yazdırınız
         Thread.sleep(2000);
         System.out.println("3. Butonun alert mesaji : "+driver.switchTo().alert().getText());
-        driver.switchTo().alert().sendKeys("Erol Evren");
+
+        driver.switchTo().alert().sendKeys("Selcuk ALTINISIK");
         driver.switchTo().alert().accept();
+
         String actualMesaj = driver.findElement(By.xpath("//*[@id='result']")).getText();
-        String expectedMesaj = "Erol Evren";
+        String expectedMesaj = "Selcuk ALTINISIK";
         Assert.assertTrue(actualMesaj.contains(expectedMesaj));
     }
 }

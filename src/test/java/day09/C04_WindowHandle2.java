@@ -42,10 +42,9 @@ public class C04_WindowHandle2 {
     }
 
     @Test
-    public void test1() {
+    public void test1() throws InterruptedException {
         //    https://the-internet.herokuapp.com/windows adresine gidin.
         driver.get("https://the-internet.herokuapp.com/windows");
-
 
         //    Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
         Assert.assertTrue(driver.findElement(By.xpath("//*[text()='Opening a new window']")).isDisplayed());
@@ -55,6 +54,16 @@ public class C04_WindowHandle2 {
 
         //    Click Here butonuna basın.
         driver.findElement(By.xpath("//*[text()='Click Here']")).click();
+
+        Thread.sleep(2000);
+        /*
+        Bir web sitesine gittiğinizde bir Web Elementi tıkladığınızda yeni bir sekme ya da pencere açılırsa
+        buyeni açılan sekmenin handle değerini bulabilmek için driver.getWindowHandles() methodunu bir ArrayList'e
+        atıp bütün sayfaların listesine ulaşabilirim. İlk açtığım pencerenin indexi 0(sıfır)'dır. İkinci açılan sekmenin
+        indexi 1'dir. Ve ikinci açılan pencerede ya da sekmede işlem yapabilmek için
+        driver.switchTo().window(listAdı.get(1)) methodunu kullanırız.
+         */
+
         List<String> windowList = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(windowList.get(1));
 
@@ -71,13 +80,15 @@ public class C04_WindowHandle2 {
 
 
         //    Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-
+        Assert.assertEquals(driver.getTitle(),"New Window" );
 
         //    Sayfadaki textin “New Window” olduğunu doğrulayın.....
-
+        Assert.assertTrue(driver.findElement(By.xpath("//h3")).isDisplayed());
 
         //    Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu  doğrulayın.
-
+        Thread.sleep(2000);
+        driver.switchTo().window(windowList.get(0));
+        Assert.assertEquals("The Internet", driver.getTitle());
 
     }
 

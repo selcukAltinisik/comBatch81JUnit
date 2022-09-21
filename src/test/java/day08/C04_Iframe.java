@@ -26,22 +26,21 @@ public class C04_Iframe {
     }
     @After
     public void tearDown() throws InterruptedException {
-
         driver.close();
     }
 
     @Test
     public void test1() throws InterruptedException {
         driver.get("https://html.com/tags/iframe/");
-        List<WebElement> iframeList = new ArrayList<>(driver.findElements(By.xpath("//iframe")));
-        driver.switchTo().frame(iframeList.get(0));
+
+        List<WebElement> youTubeFrame = new ArrayList<>(driver.findElements(By.xpath("//iframe")));
+        driver.switchTo().frame(youTubeFrame.get(0));
+
         WebElement youTubePlayButton = driver.findElement(By.xpath("//*[@aria-label='Oynat']"));
         Thread.sleep(3000);
+
         youTubePlayButton.click();
+        Thread.sleep(3000);
     }
-
-
-
-
 
 }
