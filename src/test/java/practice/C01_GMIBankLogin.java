@@ -31,7 +31,7 @@ public class C01_GMIBankLogin {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#password")).sendKeys("Batch81+", Keys.ENTER);
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.close();
 
    }
