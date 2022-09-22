@@ -38,7 +38,7 @@ public class C04_WindowHandle2 {
 
     @After
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Test

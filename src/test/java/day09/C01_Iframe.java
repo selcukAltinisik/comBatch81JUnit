@@ -61,6 +61,7 @@ public class C01_Iframe {
         textBoxFrame.sendKeys("Merhaba Dünya!");
 
        //○ TextBox’in altinda bulunan “Elemental Selenium” linkini textinin gorunur oldugunu dogrulayin ve konsolda yazdirin
+
         driver.switchTo().defaultContent(); //  iframe'den çıkıp ana sayfaya geçmek için bu method kullanılır..
 
         WebElement elemental= driver.findElement(By.xpath("//*[text()='Elemental Selenium']"));
