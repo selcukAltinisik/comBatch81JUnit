@@ -26,7 +26,7 @@ public class C02_FileExistsUpload extends TestBaseBeforeAfter {
         String dosyaYolu = "C:\\Users\\selcu\\Downloads\\test.txt";
         dosyaSec.sendKeys(dosyaYolu);
 
-        //Upload butonuna basalim.
+        //Upload butonuna basalim..
         driver.findElement(By.xpath("//*[@id='file-submit']")).click();
 
         //“File Uploaded!” textinin goruntulendigini test edelim.
