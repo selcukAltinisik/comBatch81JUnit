@@ -23,7 +23,7 @@ public class C02_ReadExcel {
         Workbook workbook = WorkbookFactory.create(fis); //Workbook objesiyle fis oblesi ile akışa aldığımız dosyamızla bir excell dosyası create ettik
         //-- Sheet objesi olusturun workbook.getSheetAt(index)
         //-- Row objesi olusturun sheet.getRow(index)
-        //- Cell objesi olusturun row.getCell(index)
+        //-- Cell objesi olusturun row.getCell(index)
         String actualData = workbook.getSheet("Sayfa1").getRow(3).getCell(3).toString();
         System.out.println(actualData);
 
