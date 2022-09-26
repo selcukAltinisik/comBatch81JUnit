@@ -23,7 +23,7 @@ public class C04_GetScreenShot extends TestBaseBeforeAfter {
         /*
         Bir web sayfanin resmini alabilmek icin TakesScreenshot class'indan obje olusturup
         gecici bir File class'indan degiskene TakesScreenShot'tan olusturdugum obje'den
-        tss.getScreenshotAs method'unu kullanarak gecici bir file olustururuz
+        tss.getScreenshotAs method'unu kullanarak gecici bir file olustururuz.
         */
 
         LocalDateTime date = LocalDateTime.now();
