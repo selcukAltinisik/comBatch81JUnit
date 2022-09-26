@@ -14,7 +14,7 @@ public class C02_ReadExcel {
 
     @Test
     public void readExcelTest1() throws IOException {
-        //- Dosya yolunu bir String degiskene atayalim
+        //-- Dosya yolunu bir String degiskene atayalim
         String dosyaYolu = "src/resources/ulkeler.xlsx";
         //- FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
         FileInputStream fis = new FileInputStream(dosyaYolu); //Olusturmuş olduğumuz dosyayı sistemde işleme alır
