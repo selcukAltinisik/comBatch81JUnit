@@ -22,6 +22,7 @@ public class C03_WebTables extends TestBaseBeforeAfter {
         //  input olarak verilen satır sayısı ve sutun sayısına sahip cell'deki text'i yazdıralım
         WebElement cell = driver.findElement(By.xpath("//tbody//tr["+satir+"]//td["+sutun+"]"));
         System.out.println("Satir ve sutundaki text: "+cell.getText());
+        System.out.println();
 
         //  Price başlığındaki tum numaraları yazdırınız
         List<WebElement> priceBasligi = driver.findElements(By.xpath("//tbody//tr//td[6]"));

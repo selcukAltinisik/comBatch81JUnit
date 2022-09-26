@@ -30,10 +30,6 @@ public class C02_WebTables extends TestBaseBeforeAfter {
 
         //  table( ) metodu oluşturun
         table();
-
-
-
-
     }
 
     private void table() {
