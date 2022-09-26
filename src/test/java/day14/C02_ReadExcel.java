@@ -18,7 +18,7 @@ public class C02_ReadExcel {
         String dosyaYolu = "src/resources/ulkeler.xlsx";
         //- FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
         FileInputStream fis = new FileInputStream(dosyaYolu); //Olusturmuş olduğumuz dosyayı sistemde işleme alır
-        //- Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
+        //-- Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
         //- WorkbookFactory.create(fileInputStream)
         Workbook workbook = WorkbookFactory.create(fis); //Workbook objesiyle fis oblesi ile akışa aldığımız dosyamızla bir excell dosyası create ettik
         //-- Sheet objesi olusturun workbook.getSheetAt(index)
