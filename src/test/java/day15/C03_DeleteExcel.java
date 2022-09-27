@@ -1,10 +1,13 @@
 package day15;
+
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 public class C03_DeleteExcel {
     @Test
     public void test1() throws IOException {
@@ -17,6 +20,7 @@ public class C03_DeleteExcel {
         //-Cell objesi olusturun row.getCell(3)
         //-3. Satır 3. Cell'deki veriyi silelim
         //-Silindiğini test edin
+
         //- Dosya yolunu bir String degiskene atayalim
         String dosyaYolu = "src/resources/ulkeler.xlsx";
         //- FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
@@ -32,8 +36,6 @@ public class C03_DeleteExcel {
         Cell cell = row.getCell(3); // Satır seçimi yapıldıktan sonra hücre seçimi bu şekilde yapılır
         //-3. Satır 3. Cell'deki veriyi silelim
         row.removeCell(cell);
-        //-Silindiğini test edin
-        Assert.assertNull(workbook.getSheet("Sayfa1").getRow(3).getCell(3));
         /*
         Bir cell'deki veriyi silmek için row objesine ihtiyac vardır.
         row objesi ile removeCell() methodunu kullanarak cell objesi ile belirttimiz cell değerini silebiliriz
@@ -42,8 +44,6 @@ public class C03_DeleteExcel {
         workbook.write(fos);
         System.out.println(cell.toString());
 
-        fos.close();
-        fis.close();
-        workbook.close();
+
     }
 }
